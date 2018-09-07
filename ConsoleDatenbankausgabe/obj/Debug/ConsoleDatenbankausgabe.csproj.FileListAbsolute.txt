@@ -1,0 +1,7 @@
+C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\bin\Debug\ConsoleDatenbankausgabe.exe.config
+C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\bin\Debug\ConsoleDatenbankausgabe.exe
+C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\bin\Debug\ConsoleDatenbankausgabe.pdb
+C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.csprojAssemblyReference.cache
+C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.csproj.CoreCompileInputs.cache
+C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.exe
+C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.pdb
