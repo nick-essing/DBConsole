@@ -4,53 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
+using System.Data;
 namespace ConsoleDatenbankausgabe
+
 {
     class main
     {
         static void Main(string[] args)
         {
-            Console.Write("Ausgabe:");
-            createConnection();
-            List<List<String>> list = newSELECT("SELECT * FROM viEmployee");
-            Console.WriteLine(list);
+            createNewSELECT("SELECT * FROM viEmployeeAddress");
         }
-        public static void createConnection()
-        {
-            using (SqlConnection conn = new SqlConnection("DataSource=TAPPQA;Initial Catalog=Training-NI-CompanyDB;IntegratedSecurity=True"))
-            {
-                try
-                {
-                    conn.Open();
-                }
-                catch (Exception)
-                {
-                }
-            }
-        }
-        public static List<List<String>> newSELECT(String SQLinput)
+        public static void createNewSELECT(String SQLInput)
         {
             try
             {
-                List<List<String>> list = new List<List<String>>();
-                SqlCommand command = new SqlCommand(SQLinput);
-                SqlDataReader myReader = command.ExecuteReader();
-                while (myReader.Read())
+                using (SqlConnection conn = new SqlConnection())
                 {
-                    List<String> tmpList = new List<String>();
-                    for (int i = 0; myReader[i] != null; i++) {
-                        tmpList.Add(myReader[i].ToString());
-                        Console.WriteLine(myReader[i].ToString());
+                    conn.ConnectionString = "Data Source=tappqa;Initial Catalog=Training-NI-CompanyDB;Integrated Security=True";
+                    conn.Open();
+                    using (SqlDataAdapter a = new SqlDataAdapter(SQLInput, conn))
+                    {
+                        DataTable t = new DataTable();
+                        a.Fill(t);
+                        DataRow[] currentRows = t.Select(
+                        null, null, DataViewRowState.CurrentRows);
+
+                        if (currentRows.Length < 1)
+                            Console.WriteLine("No Current Rows Found");
+                        else
+                        {
+                            foreach (DataRow row in currentRows)
+                            {
+                                foreach (DataColumn column in t.Columns)
+                                    Console.Write("\t{0}", row[column]);
+
+                                Console.WriteLine("\t");
+                            }
+                        }
                     }
-                    list.Add(tmpList);
                 }
-                return list;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e.ToString());
-                return null;
+                Console.WriteLine("NULL");
             }
         }
     }
