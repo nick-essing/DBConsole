@@ -5,3 +5,12 @@ C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\obj\Debug\ConsoleDate
 C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.csproj.CoreCompileInputs.cache
 C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.exe
 C:\Dev\SQL\ConsoleDatenbankausgabe\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.pdb
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\bin\Debug\ConsoleDatenbankausgabe.exe.config
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\bin\Debug\ConsoleDatenbankausgabe.exe
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\bin\Debug\ConsoleDatenbankausgabe.pdb
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.csprojAssemblyReference.cache
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.csproj.CoreCompileInputs.cache
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.exe
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.pdb
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.Properties.Resources.resources
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.csproj.GenerateResource.cache
