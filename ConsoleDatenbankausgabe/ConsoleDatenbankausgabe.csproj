@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TblHandler.cs" />
     <Compile Include="main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -50,8 +51,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Repositoies\Address.cs" />
+    <Compile Include="Repositoies\Company.cs" />
+    <Compile Include="Repositoies\CompanyAddress.cs" />
+    <Compile Include="Repositoies\CompanyDepartment.cs" />
     <Compile Include="Repositoies\Department.cs" />
     <Compile Include="Repositoies\Employee.cs" />
+    <Compile Include="Repositoies\EmployeeAddress.cs" />
+    <Compile Include="Repositoies\EmployeeDepartment.cs" />
+    <Compile Include="Repositoies\ManagerFromDepartmentsEmployee.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
