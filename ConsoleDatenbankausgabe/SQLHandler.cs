@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 
 namespace ConsoleDatenbankausgabe
 {
-    class TblHandler
+    class SQLHandler
     {
-        public static void displayTbl(String SQLInput, SqlConnection conn)
+        public static void SQLCommand(String SQLInput, SqlConnection conn)
         {
             using (SqlDataAdapter a = new SqlDataAdapter(SQLInput, conn))
             {
@@ -17,10 +17,6 @@ namespace ConsoleDatenbankausgabe
                 null, null, DataViewRowState.CurrentRows);
                 List<int> paddings = getRowPaddings(t);
 
-                if (currentRows.Length < 1)
-                    Console.WriteLine("No Current Rows Found");
-                else
-                {
                     Console.Write(" \u2554");
                     for (int x = 0; x < paddings.Count; x++)
                     {
@@ -61,7 +57,8 @@ namespace ConsoleDatenbankausgabe
                     Console.Write("\u2563");
                     Console.WriteLine();
 
-
+                if (currentRows.Length >= 1)
+                {
                     for (int j = 0; j < t.Rows.Count; j++)
                     {
                         for (int z = 0; z < t.Columns.Count; z++)
@@ -73,7 +70,7 @@ namespace ConsoleDatenbankausgabe
                         Console.WriteLine();
                     }
 
-
+                }
                     Console.Write(" \u255A");
                     for (int x = 0; x < paddings.Count; x++)
                     {
@@ -87,10 +84,10 @@ namespace ConsoleDatenbankausgabe
                     }
                     Console.Write("\u255D");
                     Console.WriteLine();
-                }
+                
             }
         }
-        public static List<int> getRowPaddings(DataTable t)
+        private static List<int> getRowPaddings(DataTable t)
         {
             List<int> list = new List<int>();
             for (int j = 0; j < t.Columns.Count; j++)
@@ -106,6 +103,14 @@ namespace ConsoleDatenbankausgabe
                 list.Add(longestColumn);
             }
             return list;
+        }
+        public static void newStoredProcedure(String procedureName, SqlConnection conn, String[] paramName = null, object[] param = null)
+        {
+            SqlCommand cmd = new SqlCommand(procedureName, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            for (int i = 0; i < paramName.Length && i < param.Length; i++)
+                cmd.Parameters.AddWithValue(paramName[i], param[i]);
+            cmd.ExecuteNonQuery();
         }
     }
 }
