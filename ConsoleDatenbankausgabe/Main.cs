@@ -45,6 +45,7 @@ namespace ConsoleDatenbankausgabe
                                 case 1:
                                     do
                                     {
+                                        Console.WriteLine("Address Tabelle: ");
                                         a.Load(conn);
                                         obj = consoleAction();
                                         if (Int32.Parse(obj[1].ToString()) == 1 || Int32.Parse(obj[1].ToString()) == 2)
@@ -73,6 +74,7 @@ namespace ConsoleDatenbankausgabe
                                     } while (!Boolean.Parse(obj[0].ToString()));
                                     break;
                                 case 2:
+                                    Console.WriteLine("Employee Tabelle: ");
                                     do
                                     {
                                         e.Load(conn);
@@ -88,7 +90,7 @@ namespace ConsoleDatenbankausgabe
                                             Console.WriteLine("gib ein Geburtsdatum ein: ");
                                             DateTime birthdate = DateTime.Parse(Console.ReadLine());
                                             Console.WriteLine("gib ein Gehalt ein: ");
-                                            Double salary = Double.Parse(Console.ReadLine());
+                                            decimal salary = decimal.Parse(Console.ReadLine());
                                             Console.WriteLine("gib ein geschlecht ein (1 männlich, 2 weiblich, 3 kompliziert): ");
                                             int gender = Int32.Parse(Console.ReadLine());
                                             e.spInsertOrUpdate(conn, Id, name1, birthdate, salary, gender);
@@ -104,6 +106,7 @@ namespace ConsoleDatenbankausgabe
                                 case 3:
                                     do
                                     {
+                                        Console.WriteLine("Department Tabelle: ");
                                         c.Load(conn);
                                         obj = consoleAction();
                                         if (Int32.Parse(obj[1].ToString()) == 1 || Int32.Parse(obj[1].ToString()) == 2)
@@ -127,6 +130,7 @@ namespace ConsoleDatenbankausgabe
                                 case 4:
                                     do
                                     {
+                                        Console.WriteLine("Company Tabelle: ");
                                         d.Load(conn);
                                         obj = consoleAction();
                                         if (Int32.Parse(obj[1].ToString()) == 1 || Int32.Parse(obj[1].ToString()) == 2)
@@ -150,6 +154,7 @@ namespace ConsoleDatenbankausgabe
                                 case 5:
                                     do
                                     {
+                                        Console.WriteLine("Company + Address Tabelle: ");
                                         ca.Load(conn);
                                         Console.WriteLine("Company Tabelle:");
                                         c.Load(conn);
@@ -167,6 +172,7 @@ namespace ConsoleDatenbankausgabe
                                 case 6:
                                     do
                                     {
+                                        Console.WriteLine("Company + Department Tabelle: ");
                                         cd.Load(conn);
                                         Console.WriteLine("Company Tabelle:");
                                         c.Load(conn);
@@ -184,6 +190,7 @@ namespace ConsoleDatenbankausgabe
                                 case 7:
                                     do
                                     {
+                                        Console.WriteLine("Employee + Depatment Tabelle: ");
                                         ed.Load(conn);
                                         Console.WriteLine("Employee Tabelle:");
                                         e.Load(conn);
@@ -201,6 +208,7 @@ namespace ConsoleDatenbankausgabe
                                 case 8:
                                     do
                                     {
+                                        Console.WriteLine("Employee + Address Tabelle: ");
                                         ea.Load(conn);
                                         Console.WriteLine("Employee Tabelle:");
                                         e.Load(conn);
@@ -209,15 +217,16 @@ namespace ConsoleDatenbankausgabe
                                         obj = consoleForeignKeyAction();
                                         if (Int32.Parse(obj[1].ToString()) == 1)
                                         {
-                                            int EmployeeId = id("Employee");
                                             int AddressId = id("Address");
-                                            ea.spAddEmployeesToAddresses(conn, EmployeeId, AddressId);
+                                            int EmployeeId = id("Employee");
+                                            ea.spAddEmployeesToAddresses(conn, AddressId, EmployeeId);
                                         }
                                     } while (!Boolean.Parse(obj[0].ToString()));
                                     break;
                                 case 9:
                                     do
                                     {
+                                        Console.WriteLine("Manager(Employee)+ Department Tabelle: ");
                                         mde.Load(conn);
                                         Console.WriteLine("Department Tabelle:");
                                         d.Load(conn);

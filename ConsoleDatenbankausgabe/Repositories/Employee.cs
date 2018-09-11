@@ -13,9 +13,9 @@ namespace ConsoleDatenbankausgabe.Repositories
         {
             SQLHandler.SQLCommand("SELECT * FROM viEmployee", conn);
         }
-        public void spInsertOrUpdate(SqlConnection conn, int Id, String name, DateTime birthdate, Double salary, int gender)
+        public void spInsertOrUpdate(SqlConnection conn, int Id, String name, DateTime birthdate, decimal salary, int gender)
         {
-            SQLHandler.newStoredProcedure("spInsertOrUpdateEmployee", conn, new string[] {  "@Id", "@name", "@birthdate", "@salary", "@gender" }, new object[] { Id, name, birthdate, salary, gender });
+            SQLHandler.newStoredProcedure("spInsertOrUpdateEmployee", conn, new string[] {  "@Id", "@name", "@birthdate", "@salary", "@gender" }, new object[] { Id, name, birthdate, Math.Round(salary,2), gender });
         }
         public void spDelete(SqlConnection conn, int Id)
         {

@@ -11,7 +11,7 @@ namespace ConsoleDatenbankausgabe.Repositories
         }
         public void spAddEmployeeToDepartment(SqlConnection conn, int EmployeeId, int DepartmentId)
         {
-            SQLHandler.newStoredProcedure("spAddEmployeeToDepartment", conn, new string[] { "@EmployeeId", "@DepartmentId" }, new object[] { EmployeeId, DepartmentId });
+            SQLHandler.newStoredProcedure("spAddEmployeesToDepartment", conn, new string[] { "@EmployeeId", "@DepartmentId" }, new object[] { EmployeeId, DepartmentId });
         }
     }
 }

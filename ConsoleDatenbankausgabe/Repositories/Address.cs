@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace ConsoleDatenbankausgabe.Repositories
 {
@@ -7,11 +8,15 @@ namespace ConsoleDatenbankausgabe.Repositories
     {
         public Address()
         {
-
         }
-        public void Load(SqlConnection conn)
+
+        public List<Model.Address> Read(SqlConnection conn)
         {
-            SQLHandler.SQLCommand("SELECT * FROM viAddress", conn);
+            var retVal = new List<Model.Address>();
+            
+            // Daten laden
+
+            return retVal;
         }
         public void spInsertOrUpdate(SqlConnection conn, int Id, int Postcode, String City, String Street, String Country)
         {
