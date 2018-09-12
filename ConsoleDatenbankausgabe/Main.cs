@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using ConsoleDatenbankausgabe.Repositories;
 using ConsoleDatenbankausgabe.Controller;
 using System.Collections.Generic;
+using Dapper;
 
 namespace ConsoleDatenbankausgabe
 {
@@ -62,20 +63,18 @@ namespace ConsoleDatenbankausgabe
                                             Console.WriteLine("gib einen Postleitzahl ein: ");
                                             int postcode = Int32.Parse(Console.ReadLine());
                                             Console.WriteLine("gib eine Stadt ein: ");
-                                            String city = Console.ReadLine();
+                                            string city = Console.ReadLine();
                                             Console.WriteLine("gib eine Straße und Hausnummer ein: ");
-                                            String street = Console.ReadLine();
+                                            string street = Console.ReadLine();
                                             Console.WriteLine("gib ein Land ein: ");
-                                            String country = Console.ReadLine();
-                                            int Id2 = a.spInsertOrUpdate(conn, Id, postcode, city, street, country);
-                                            Model.Address ma = a.Read(conn, Id2);
+                                            string country = Console.ReadLine();
+                                            Model.Address ma = a.spInsertOrUpdate(conn, Id, postcode, city, street, country);
                                             new AddressController(ma);
                                         }
                                         if (Int32.Parse(obj[1].ToString()) == 3)
                                         { 
                                             int Id = id();
-                                            int Id2 = a.spDelete(conn, Id);
-                                            Model.Address ma = a.Read(conn, Id2);
+                                            Model.Address ma = a.spDelete(conn, Id);
                                             new AddressController(ma);
 
                                         }

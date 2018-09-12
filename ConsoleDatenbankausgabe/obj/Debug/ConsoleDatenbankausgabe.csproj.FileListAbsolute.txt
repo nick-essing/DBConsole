@@ -14,3 +14,6 @@ C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.e
 C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.pdb
 C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.Properties.Resources.resources
 C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.csproj.GenerateResource.cache
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\bin\Debug\Dapper.dll
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\bin\Debug\Dapper.xml
+C:\Dev\SQL\DBConsole\ConsoleDatenbankausgabe\obj\Debug\ConsoleDatenbankausgabe.csproj.CopyComplete
