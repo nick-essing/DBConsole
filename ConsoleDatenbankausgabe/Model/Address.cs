@@ -4,19 +4,18 @@ namespace ConsoleDatenbankausgabe.Model
 {
     public class Address
     {
-        public Address(int id, int postcode, String city, String street, String country)
+        public Address(int id, int postcode, string city, string street, string country)
         {
-            Id = id;
-            Postcode = postcode;
-            City = city;
-            Street = street;
-            Country = country;
+            this.Id = id;
+            this.Postcode = postcode;
+            this.City = city;
+            this.Street = street;
+            this.Country = country;
         }
         public int Id { get; set; }
         public int Postcode { get; set; }
-        public String City { get; set; }
-        public String Street { get; set; }
-        public String Country { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string Country { get; set; }
     }
-    //SQLHandler.SQLCommand("SELECT * FROM viAddress", conn);
 }

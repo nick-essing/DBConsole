@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
 using ConsoleDatenbankausgabe.Repositories;
+using ConsoleDatenbankausgabe.Controller;
+using System.Collections.Generic;
+
 namespace ConsoleDatenbankausgabe
 {
     class main
@@ -16,7 +19,7 @@ namespace ConsoleDatenbankausgabe
                         conn.ConnectionString = ConsoleDatenbankausgabe.Properties.Resources.sqlConnectionString;
                         conn.Open();
                         bool x = true;
-                        Address a = new Address();
+                        AddressRepo a = new AddressRepo();
                         Employee e = new Employee();
                         Company c = new Company();
                         Department d = new Department();
@@ -46,7 +49,8 @@ namespace ConsoleDatenbankausgabe
                                     do
                                     {
                                         Console.WriteLine("Address Tabelle: ");
-                                        a.Load(conn);
+                                        List<Model.Address> maList = a.Read(conn);
+                                        new AddressController(maList);
                                         obj = consoleAction();
                                         if (Int32.Parse(obj[1].ToString()) == 1 || Int32.Parse(obj[1].ToString()) == 2)
                                         {
@@ -59,16 +63,20 @@ namespace ConsoleDatenbankausgabe
                                             int postcode = Int32.Parse(Console.ReadLine());
                                             Console.WriteLine("gib eine Stadt ein: ");
                                             String city = Console.ReadLine();
-                                            Console.WriteLine("gib eine Starße und Hausnummer ein: ");
+                                            Console.WriteLine("gib eine Straße und Hausnummer ein: ");
                                             String street = Console.ReadLine();
                                             Console.WriteLine("gib ein Land ein: ");
                                             String country = Console.ReadLine();
-                                            a.spInsertOrUpdate(conn, Id, postcode, city, street, country);
+                                            int Id2 = a.spInsertOrUpdate(conn, Id, postcode, city, street, country);
+                                            Model.Address ma = a.Read(conn, Id2);
+                                            new AddressController(ma);
                                         }
                                         if (Int32.Parse(obj[1].ToString()) == 3)
                                         { 
-                                            int Id1 = id();
-                                            a.spDelete(conn, Id1);
+                                            int Id = id();
+                                            int Id2 = a.spDelete(conn, Id);
+                                            Model.Address ma = a.Read(conn, Id2);
+                                            new AddressController(ma);
 
                                         }
                                     } while (!Boolean.Parse(obj[0].ToString()));
@@ -159,7 +167,7 @@ namespace ConsoleDatenbankausgabe
                                         Console.WriteLine("Company Tabelle:");
                                         c.Load(conn);
                                         Console.WriteLine("Adresssen Tabelle:");
-                                        a.Load(conn);
+                                        //a.Load(conn);
                                         obj = consoleForeignKeyAction();
                                         if (Int32.Parse(obj[1].ToString()) == 1)
                                         {
@@ -213,7 +221,7 @@ namespace ConsoleDatenbankausgabe
                                         Console.WriteLine("Employee Tabelle:");
                                         e.Load(conn);
                                         Console.WriteLine("Adresssen Tabelle:");
-                                        a.Load(conn);
+                                        //a.Load(conn);
                                         obj = consoleForeignKeyAction();
                                         if (Int32.Parse(obj[1].ToString()) == 1)
                                         {
