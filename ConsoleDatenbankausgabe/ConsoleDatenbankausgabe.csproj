@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AddressController.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="SQLHandler.cs" />
     <Compile Include="main.cs" />
@@ -52,7 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\Address.cs" />
+    <Compile Include="Repositories\AddressRepo.cs" />
     <Compile Include="Repositories\Company.cs" />
     <Compile Include="Repositories\CompanyAddress.cs" />
     <Compile Include="Repositories\CompanyDepartment.cs" />
@@ -71,8 +72,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
